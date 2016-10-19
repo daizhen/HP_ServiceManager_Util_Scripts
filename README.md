@@ -29,7 +29,7 @@ This script used to generate JavaScript Proxy to operator complex Service Manage
 	```
 
 #2. [Full Content Searching Tool ](src/FullContentCodeSearch.js "Full content searching")
-###In HP Service Manager, we have to search for a variable, or a piece of string content, within database for trouble shooting. We can use the system embedded tool, *afind.string, to search the data within a *single* table. And the search result shows which records contain the target string. But there are 2 points, which are not perfect:
+In HP Service Manager, we have to search for a variable, or a piece of string content, within database for trouble shooting. We can use the system embedded tool, *afind.string, to search the data within a *single* table. And the search result shows which records contain the target string. But there are 2 points, which are not perfect:
     1. Search in single table one time.
     2. The result does not show the exact place, which columns and which line, to hold the target string.
 
