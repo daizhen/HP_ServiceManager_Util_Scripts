@@ -29,4 +29,36 @@ This script used to generate JavaScript Proxy to operator complex Service Manage
 	```
 
 #2. [Full Content Searching Tool ](src/FullContentCodeSearch.js "Full content searching")
-###In HP Service Manager, we have to search for a variable, or a piece of string content, within database for trouble shooting. We can use the system embedded tool, *afind.string, to search the data within a *single* table. And the search result shows which records contain the target string. 
+###In HP Service Manager, we have to search for a variable, or a piece of string content, within database for trouble shooting. We can use the system embedded tool, *afind.string, to search the data within a *single* table. And the search result shows which records contain the target string. But there are 2 points, which are not perfect:
+    1. Search in single table one time.
+    2. The result does not show the exact place, which columns and which line, to hold the target string.
+
+By using this tool, you can search string in all tables one time.You can pre-configure  the tables in function `BuildTables`.
+It's very easy to call this method.
+
+```javascript
+var result_list = GetAllString("TARGET STRING");
+```
+And the result_list is an array of object `SearchResult` 
+
+```javascript
+
+function SearchResult()
+{
+	this.table="";
+	this.key="";
+	this.field="";
+};
+
+```
+
+Followings are a list of search result, when searching for ***$lo.operator***. 
+
+``` javascript
+Process  process=reportscheduleDefinition.new.init   	descriptor.pre.expressions[8].pre.expressions
+Process  process=cm.open.save_BFPD   					descriptor.rad[4].post.rad.expressions[1].post.rad.expressions
+Process  process=cc.first.log_backup_160106   			descriptor.javascript.post
+Process  process=cc.first.log_backup   					descriptor.javascript.post
+Process  process=cc.first.log   						descriptor.javascript.post
+```
+
