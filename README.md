@@ -62,3 +62,10 @@ Process  process=cc.first.log_backup   					descriptor.javascript.post
 Process  process=cc.first.log   						descriptor.javascript.post
 ```
 
+#3. [Hash Util](src/Hash_Util.js "Hash Util")
+
+It's an simple script implement HashSet and Hashtable.
+
+#4. [Json Util](src/Json_Util.js "Json Util")
+
+A script to generate json string from java object.
